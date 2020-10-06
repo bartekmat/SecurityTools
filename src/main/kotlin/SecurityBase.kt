@@ -8,6 +8,11 @@ abstract class SecurityBase(protected val outPutStrategy: OutPutStrategy) {
     private val overwrite: Boolean by Argument.argument()
     private val encode: Boolean by Argument.argument()
 
+    protected val algorithm: String by Argument.argument()
+    protected val fileName: String by Argument.argument()
+    protected val destFileName: String by Argument.argument()
+    protected val provider: String by Argument.argument()
+
     @Throws(FileNotFoundException::class)
     fun createInputStream(fileName: String): InputStream {
         return if (fileName.isEmpty()){
@@ -51,5 +56,10 @@ abstract class SecurityBase(protected val outPutStrategy: OutPutStrategy) {
             os.write(bytes)
         }
         os.flush()
+    }
+
+    @Throws(IOException::class)
+    fun readBytes(inStream: InputStream): ByteArray {
+        return inStream.readBytes()
     }
 }
