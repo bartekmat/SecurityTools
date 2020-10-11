@@ -10,7 +10,7 @@ class Hash(outputStrategy: OutputStrategy) : SecurityBase(outputStrategy) {
 
     private val logger by logger()
 
-    object Help {
+    companion object Help {
         fun help() {
             println("hashing: java SecurityToolsKt [-op 'hash'] [-f filename] [-d destfilename] [-p provider] [-a algorithm] [-o] [-encode]")
             println("\tf filename\t: read input data from filename")

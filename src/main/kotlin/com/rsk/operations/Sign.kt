@@ -27,7 +27,7 @@ class Sign(outputStrategy: OutputStrategy): SecurityBase(outputStrategy){
 
     private var keystore: KeyStore? = null
 
-    object Help {
+    companion object Help {
         fun help() {
             println("signing: java SecurityTools [-op 'sign'] -s [-f filename] [-d signaturefile] [-p provider] [-encode] [-o] [-a algorithm]")
             println("\t\t[-o] [-encode] [-keystoretype keystoretype] [-keyStorePass storepassword]")

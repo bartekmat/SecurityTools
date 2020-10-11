@@ -18,9 +18,9 @@ fun main(args: Array<String>) {
     if (isHelp.startsWith("--help")) {
         val helpOn = isHelp.split(":")[1]
         when (helpOn) {
-            "providers" -> Providers.Help.help()
-            "hash" -> Hash.Help.help()
-            "sign" -> Sign.Help.help()
+            "providers" -> Providers.help()
+            "hash" -> Hash.help()
+            "sign" -> Sign.help()
         }
         return
     }
