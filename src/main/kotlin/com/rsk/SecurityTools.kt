@@ -123,15 +123,15 @@ fun main(args: Array<String>) {
     // execute the code
     when (type.value.toLowerCase()) {
         "hash" -> {
-            Hash(ConsoleOutputStrategy()).run()
+            Hash(ConsoleOutputStrategy).run()
         }
 
         "sign" -> {
-            Sign(ConsoleOutputStrategy()).run()
+            Sign(ConsoleOutputStrategy).run()
         }
 
         "providers" -> {
-            Providers(ConsoleOutputStrategy()).run()
+            Providers(ConsoleOutputStrategy).run()
         }
     }
 }

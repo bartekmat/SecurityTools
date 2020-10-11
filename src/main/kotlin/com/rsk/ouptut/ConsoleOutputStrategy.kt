@@ -1,6 +1,6 @@
 package com.rsk.ouptut
 
-class ConsoleOutputStrategy : OutputStrategy {
+object ConsoleOutputStrategy : OutputStrategy {
     override fun write(value: String) {
         println(value)
     }
