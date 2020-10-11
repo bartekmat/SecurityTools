@@ -1,7 +1,4 @@
-package com.rsk.security
-
-import kotlin.properties.ReadOnlyProperty
-import kotlin.reflect.KProperty
+package com.rsk.arguments
 
 object ParseArgs {
 
@@ -16,7 +13,7 @@ object ParseArgs {
 
     private val strArguments = mutableMapOf<String, Any>()
 
-    // called from the 'main' code to initialize both the maps with
+    // called from the 'com.rsk.main' code to initialize both the maps with
     // the keys used on the command line, the names of the arguments they
     // map to and the default values they should have
     // "-filter" -> "filter" -> ""
@@ -106,23 +103,6 @@ object ParseArgs {
 
 }
 
-sealed class ArgumentType {
-    class StringType(var value: String = "") : ArgumentType()
-    class BooleanType(var value: Boolean = false) : ArgumentType()
-}
-
-data class ArgumentInitializers(val name: String,
-                                val type: ArgumentType,
-                                val key: String)
 
 
-object Argument {
-    fun <T> argument():
-            ReadOnlyProperty<Any, T> = object : ReadOnlyProperty<Any, T> {
-        @Suppress("UNCHECKED_CAST")
-        override fun getValue(thisRef: Any, property: KProperty<*>): T {
-            return ParseArgs[property.name] as T
-        }
-    }
 
-}

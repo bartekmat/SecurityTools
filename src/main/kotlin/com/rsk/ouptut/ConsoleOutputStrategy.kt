@@ -1,10 +1,6 @@
-interface OutPutStrategy {
-    fun write(value: String)
-    fun writeHeader()
-    fun writeFooter()
-}
+package com.rsk.ouptut
 
-class ConsoleOutputStrategy : OutPutStrategy {
+class ConsoleOutputStrategy : OutputStrategy {
     override fun write(value: String) {
         println(value)
     }

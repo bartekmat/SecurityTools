@@ -1,17 +1,20 @@
-import com.rsk.security.Argument
+package com.rsk.operations
+
+import com.rsk.arguments.Argument.argument
+import com.rsk.ouptut.OutputStrategy
 import java.io.*
 import java.util.*
 
-abstract class SecurityBase(protected val outPutStrategy: OutPutStrategy) {
+abstract class SecurityBase(protected val outputStrategy: OutputStrategy) {
     abstract fun run()
 
-    private val overwrite: Boolean by Argument.argument()
-    private val encode: Boolean by Argument.argument()
+    private val overwrite: Boolean by argument()
+    private val encode: Boolean by argument()
 
-    protected val algorithm: String by Argument.argument()
-    protected val fileName: String by Argument.argument()
-    protected val destFileName: String by Argument.argument()
-    protected val provider: String by Argument.argument()
+    protected val algorithm: String by argument()
+    protected val fileName: String by argument()
+    protected val destFileName: String by argument()
+    protected val provider: String by argument()
 
     @Throws(FileNotFoundException::class)
     fun createInputStream(fileName: String): InputStream {

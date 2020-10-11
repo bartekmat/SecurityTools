@@ -1,5 +1,4 @@
-// 4. Add this
-package com.rsk.security
+package com.rsk.utils
 
 import kotlin.reflect.KClass
 import kotlin.reflect.full.companionObject

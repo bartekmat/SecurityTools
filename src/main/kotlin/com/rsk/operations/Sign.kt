@@ -1,5 +1,8 @@
-import com.rsk.security.Argument.argument
-import com.rsk.security.logger
+package com.rsk.operations
+
+import com.rsk.arguments.Argument.argument
+import com.rsk.logger.logger
+import com.rsk.ouptut.OutputStrategy
 import java.io.FileInputStream
 import java.security.KeyStore
 import java.security.PrivateKey
@@ -7,7 +10,7 @@ import java.security.PublicKey
 import java.security.Signature
 import java.util.*
 
-class Sign(outPutStrategy: OutPutStrategy): SecurityBase(outPutStrategy){
+class Sign(outputStrategy: OutputStrategy): SecurityBase(outputStrategy){
 
     private val logger by logger()
 

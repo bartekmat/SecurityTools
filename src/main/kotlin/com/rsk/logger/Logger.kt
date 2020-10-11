@@ -1,5 +1,5 @@
-package com.rsk.security
-
+package com.rsk.logger
+import com.rsk.utils.unwrapCompanionClass
 import java.util.logging.Logger
 
 

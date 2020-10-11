@@ -1,9 +1,12 @@
-import com.rsk.security.logger
+package com.rsk.operations
+
+import com.rsk.logger.logger
+import com.rsk.ouptut.OutputStrategy
 import java.io.InputStream
 import java.security.MessageDigest
 
 
-class Hash(outPutStrategy: OutPutStrategy) : SecurityBase(outPutStrategy) {
+class Hash(outputStrategy: OutputStrategy) : SecurityBase(outputStrategy) {
 
     private val logger by logger()
 
